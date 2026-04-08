@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Java Script</h2>
+    <script>
+        var msg1 = "ABES EC";
+        document.write(msg1);
+        console.log(msg1);
+         
+        function hello() {
+           var msg2="Thanks To Visit!";
+           console.log(msg2);
+            console.log(msg1+msg2); //  msg2 is defined in this scope
+
+        }
+        hello();
+       // console.log(msg2+msg1); // This will give an error because msg2 is not defined in this scope
+
+       var myName = "shivam";
+         console.log(myName)
+         console.log(typeof (myName));
+          var num = 7070156899;
+          console.log(num);
+          console.log(typeof (num));
+          var bread = false;
+          console.log(bread);
+          console.log(typeof (bread));
+          var info = null;
+          console.log(info);
+          console.log(typeof (info));
+          var undefine = undefined;
+          console.log(undefine);
+          console.log(typeof (undefine));
+
+    </script>
+</body>
+</html>
