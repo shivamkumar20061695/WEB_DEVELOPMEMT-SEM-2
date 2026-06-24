@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Lab</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 400px;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: 8px;
+      width: 80%;
+      margin-bottom: 15px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 id="heading">Welcome to JavaScript Lab</h1>
+
+  <input type="text" id="inputText" placeholder="Enter new heading text">
+
+  <br>
+
+  <button onclick="changeHeading()">Change Heading</button>
+  <button onclick="changeBackground()">Change Background</button>
+  <button onclick="increaseFont()">Increase Font Size</button>
+  <br>
+  <button onclick="toggleParagraph()">Show/Hide Paragraph</button>
+  <button onclick="resetAll()">Reset</button>
+
+  <p id="para">
+    This is a sample paragraph. JavaScript events can dynamically change content.
+  </p>
+</div>
+
+<script>
+  let fontSize = 16;
+  let visible = true;
+
+  function changeHeading() {
+    const text = document.getElementById("inputText").value;
+    if (text !== "") {
+      document.getElementById("heading").innerText = text;
+    }
+  }
+
+  function changeBackground() {
+    const colors = ["#f0f4f8", "#ffe4e1", "#e6ffe6", "#e6f0ff"];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.body.style.backgroundColor = randomColor;
+  }
+
+  function increaseFont() {
+    fontSize += 2;
+    document.getElementById("heading").style.fontSize = fontSize + "px";
+  }
+
+  function toggleParagraph() {
+    const para = document.getElementById("para");
+    visible = !visible;
+    para.style.display = visible ? "block" : "none";
+  }
+
+  function resetAll() {
+    document.getElementById("heading").innerText = "Welcome to JavaScript Lab";
+    document.body.style.backgroundColor = "#f0f4f8";
+    document.getElementById("para").style.display = "block";
+    fontSize = 16;
+    document.getElementById("heading").style.fontSize = fontSize + "px";
+  }
+</script>
+
+</body>
+</html>
